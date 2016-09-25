@@ -1,10 +1,15 @@
 package br.com.materialized.model;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Usuario {
 
 	private Long codigo;
+	@NotBlank
 	private String nome;
+	@NotBlank
 	private String email;
+	@NotBlank
 	private String senha;
 	
 	public Long getCodigo() {
