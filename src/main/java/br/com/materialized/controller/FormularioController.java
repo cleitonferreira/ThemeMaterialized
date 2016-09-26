@@ -14,18 +14,19 @@ import br.com.materialized.model.Usuario;
 @Controller
 public class FormularioController {
 
-	@RequestMapping("/test/formulario")
-	public String novo(Model model) {
-		model.addAttribute(new Usuario());
-		return "/test/formulario";
-	}
-	
-/*	@RequestMapping("/test/formulario")
+/*
+  	@RequestMapping("/test/formulario")
 	public String novo(Model model) {
 		model.addAttribute(new Usuario());
 		return "/test/formulario";
 	}
 */
+	
+	@RequestMapping("/test/formulario")
+	public String novo(Usuario usuario) {
+		return "/test/formulario";
+	}
+
 	
 	@RequestMapping(value = "/test/formulario", method = RequestMethod.POST)
 	public String cadastrar(@Valid Usuario usuario, BindingResult result, Model model, RedirectAttributes attributes) {
