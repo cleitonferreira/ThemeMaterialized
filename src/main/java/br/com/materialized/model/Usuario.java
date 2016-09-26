@@ -1,15 +1,18 @@
 package br.com.materialized.model;
 
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.NotBlank;
 
 public class Usuario {
 
 	private Long codigo;
-	@NotBlank
+	@NotBlank(message = "Nome é obrigatório")
 	private String nome;
-	@NotBlank
+	@NotBlank(message = "E-mail é obrigatório")
 	private String email;
-	@NotBlank
+	@NotBlank(message = "Senha é obrigatório")
+	@Size(min = 1, max = 10, message = "A senha deve estar entre 1 e 10 caracteres")
 	private String senha;
 	
 	public Long getCodigo() {

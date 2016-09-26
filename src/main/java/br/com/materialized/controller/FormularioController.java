@@ -15,15 +15,24 @@ import br.com.materialized.model.Usuario;
 public class FormularioController {
 
 	@RequestMapping("/test/formulario")
-	public String novo() {
+	public String novo(Model model) {
+		model.addAttribute(new Usuario());
 		return "/test/formulario";
 	}
+	
+/*	@RequestMapping("/test/formulario")
+	public String novo(Model model) {
+		model.addAttribute(new Usuario());
+		return "/test/formulario";
+	}
+*/
 	
 	@RequestMapping(value = "/test/formulario", method = RequestMethod.POST)
 	public String cadastrar(@Valid Usuario usuario, BindingResult result, Model model, RedirectAttributes attributes) {
 		
 		if (result.hasErrors()) {
 			model.addAttribute("mensagem", "Erro no formulário");
+			model.addAttribute(usuario);
 			return "/test/formulario";
 		} else {			
 			System.out.println(">>> Nome: " + usuario.getNome());
