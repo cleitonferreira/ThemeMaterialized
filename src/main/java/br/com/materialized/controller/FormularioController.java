@@ -24,7 +24,7 @@ public class FormularioController {
 	
 	@RequestMapping("/test/formulario")
 	public String novo(Usuario usuario) {
-		return "/test/formulario";
+		return "test/formulario";
 	}
 
 	
@@ -34,7 +34,7 @@ public class FormularioController {
 		if (result.hasErrors()) {
 			model.addAttribute("mensagem", "Erro no formulário");
 			model.addAttribute(usuario);
-			return "/test/formulario";
+			return "test/formulario";
 		} else {			
 			System.out.println(">>> Nome: " + usuario.getNome());
 			System.out.println(">>> E-mail: " + usuario.getEmail());

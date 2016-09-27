@@ -11,4 +11,9 @@ public class MaterializedController {
 		return "index";
 	}
 	
+	@RequestMapping("/page-blank")
+	public String pageBlank() {
+		return "page-blank";
+	}
+	
 }
