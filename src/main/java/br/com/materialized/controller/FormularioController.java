@@ -2,6 +2,8 @@ package br.com.materialized.controller;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +16,8 @@ import br.com.materialized.model.Usuario;
 @Controller
 public class FormularioController {
 
+	private static final Logger logger = LoggerFactory.getLogger(FormularioController.class);
+	
 /*
   	@RequestMapping("/test/formulario")
 	public String novo(Model model) {
@@ -35,7 +39,10 @@ public class FormularioController {
 			model.addAttribute("mensagem", "Erro no formulário");
 			model.addAttribute(usuario);
 			return "test/formulario";
-		} else {			
+		} else {
+			
+			logger.info("O usuário foi cadastrado com sucesso!");
+			
 			System.out.println(">>> Nome: " + usuario.getNome());
 			System.out.println(">>> E-mail: " + usuario.getEmail());
 			System.out.println(">>> Senha: " + usuario.getSenha());
