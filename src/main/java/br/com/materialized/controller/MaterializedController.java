@@ -16,4 +16,14 @@ public class MaterializedController {
 		return "page-blank";
 	}
 	
+	@RequestMapping("/page-404")
+	public String page_404() {
+		return "page-404";
+	}
+	
+	@RequestMapping("/page-500")
+	public String page_500() {
+		return "page-500";
+	}
+	
 }
