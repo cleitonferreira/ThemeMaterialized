@@ -31,4 +31,9 @@ public class MaterializedController {
 		return "page-contact";
 	}
 	
+	@RequestMapping("/page-todo")
+	public String page_todo() {
+		return "page-todo";
+	}
+	
 }
