@@ -26,4 +26,9 @@ public class MaterializedController {
 		return "page-500";
 	}
 	
+	@RequestMapping("/page-contact")
+	public String page_contact() {
+		return "page-contact";
+	}
+	
 }
